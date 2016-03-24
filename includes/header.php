@@ -1,5 +1,5 @@
 <!-- This is the header file that can be included at the top of a file to have the banner at the top of a page-->
-<!-- to highlight one of the <li> on the navbar you must define the variable $action as one of the following: "home", "booking", "serach", "login", "register", "logout"-->
+<!-- to highlight one of the <li> on the navbar you must define the variable $action as one of the following: "home", "booking", "serach", "login", "register", "logout", "operator"-->
 <!-- This has the ability to change the login and register to logout -->
 <nav class="navbar navbar-default"><!-- creates the navbar -->
     <div class="container-fluid"><!-- created the container field as fluid -->
@@ -8,6 +8,7 @@
             <li <?php if ($action=="home"){echo "class='active'";}?> ><a href="index.php">Home</a></li> <!-- Homepage button -->
             <li <?php if ($action=="booking"){echo "class='active'";}?>><a href="makeBooking.php">Make Booking</a></li> <!-- Make Booking page button -->
             <li <?php if ($action=="search"){echo "class='active'";}?>><a href="journeySearch.php">Journey Search</a></li> <!-- journey serach button -->
+            <li <?php if ($action=="operator"){echo "class='active'";}?>><a href="operatorHome.php">Journey Search</a></li><!-- operator settings button -->
         </ul>
         <ul class="nav navbar-nav navbar-right"> <!-- puts the following buttons on the right of the navbar -->
         <?php
