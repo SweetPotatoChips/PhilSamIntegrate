@@ -1,9 +1,13 @@
 <?php
-	$acountName = "Phil";//tempory, will be changed when login system is done. in finished system it will submit the users username not the current placholder
-	$startLoc = $_POST["startLoc"];//gets the starting location from the post
-	$endLoc = $_POST["endLoc"];//gets the end location from the post
-	$startDate = $_POST["startdate"];//gets the departure date
-	$endDate = $_POST["enddate"];//gets the return date
+
+//	$acountName = "Phil";
+//	$startcoords['lat'] = $_post['startcoordslat']; //Sam's locations have coordinates in them
+//    $startcoords['long'] = $_post['startcoordslong'];
+//	$endLoc = $_POST["endLoc"];//gets the end location from the post
+//    $destcoords['lat'] = $_post['destcoordslat'];
+//    $destcoords['long'] = $_post['destcoordslong'];
+//	$startDate = $_POST["startdate"];//gets the departure date
+//	$endDate = $_POST["enddate"];//gets the return date
 
 	echo "Inserting the following data to booking collections in TOB database: <br>";
 	echo "Name - ",$acountName;
@@ -17,8 +21,12 @@
 	echo "Return date - ",$endDate;
 	echo "<br>";
 
+
 	//server connect
-	$connect = new MongoClient("mongolon1.sbarratt.uk");
+	$connect = new MongoDB\Driver\Manager();
+
+    echo "Connected";
+    
 
 	//db connect
 	$db = $connect->tob;
@@ -27,13 +35,21 @@
 	$bookingCollection = $db->booking;
 
 	//creats the array of data tha will be inserted into the database
+    
+    
+    $origin = array("name" => $startLoc, "latitude" => $startcoords['lat'], "longditude" => $startcoords['long']);
+    $destination = array("name" => $endLoc, "latitude" => $destcoords['lat'], "longditude" => $destcoords['long']);
+
+
 	$toInsert = array(
 		"name" => $acountName,//users acount name
-		"start location" => $startLoc,//users start location
-		"end location" => $endLoc,//users end location
+		"start location" => $origin,//users start location
+		"end location" => $destination,//users end location
 		"departure date" => $startDate,//users departure date
 		"return date" => $endDate//users return date
 		);
+
+    echo $toInsert;
 
 	print_r($toInsert); //prints the array that is submitted to the database
 

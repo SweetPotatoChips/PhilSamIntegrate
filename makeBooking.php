@@ -53,6 +53,28 @@
 						><!-- text box for start location -->
 					</div>
 
+					<div class="col-md-3">
+						<input 
+							class="form-control" 
+							name="startcoordslat" 
+							id="tags1" 
+							placeholder="Start Location Latitude" 
+							autocomplete="off"  
+							
+						><!-- text box for start location -->
+					</div>
+
+					<div class="col-md-3">
+						<input 
+							class="form-control" 
+							name="startcoordslong" 
+							id="tags1" 
+							placeholder="Start Location Longditude" 
+							autocomplete="off"  
+							
+						><!-- text box for start location -->
+					</div>
+
 					<div class="col-md-2">
 						<input 
 							class="form-control" 
@@ -79,6 +101,27 @@
 							autocomplete="off" 
 							
 						><!-- text box for end location -->
+					</div>
+					<div class="col-md-3">
+						<input 
+							class="form-control" 
+							name="destcoordslat" 
+							id="tags1" 
+							placeholder="Destination Location Latitude" 
+							autocomplete="off"  
+							
+						><!-- text box for dest location -->
+					</div>
+
+					<div class="col-md-3">
+						<input 
+							class="form-control" 
+							name="destcoordslong" 
+							id="tags1" 
+							placeholder="Destination Location Longditude" 
+							autocomplete="off"  
+							
+						><!-- text box for dest location -->
 					</div>
 
 					<div class="col-md-2">
